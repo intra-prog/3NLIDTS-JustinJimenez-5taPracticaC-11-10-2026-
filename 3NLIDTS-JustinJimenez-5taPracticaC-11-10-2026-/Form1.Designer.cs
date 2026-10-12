@@ -37,9 +37,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbotro = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApellidos = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
@@ -59,7 +59,7 @@
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.button1_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
@@ -72,7 +72,7 @@
             this.btnLimpiar.TabIndex = 1;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.button2_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label1
             // 
@@ -122,9 +122,9 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbotro);
+            this.groupBox1.Controls.Add(this.rbMasculino);
+            this.groupBox1.Controls.Add(this.rbFemenino);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(133, 218);
             this.groupBox1.Name = "groupBox1";
@@ -133,41 +133,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GENERO";
             // 
-            // radioButton1
+            // rbotro
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(62, 48);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(113, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "FEMENINO";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rbotro.AutoSize = true;
+            this.rbotro.BackColor = System.Drawing.Color.Transparent;
+            this.rbotro.Location = new System.Drawing.Point(471, 48);
+            this.rbotro.Name = "rbotro";
+            this.rbotro.Size = new System.Drawing.Size(82, 21);
+            this.rbotro.TabIndex = 2;
+            this.rbotro.TabStop = true;
+            this.rbotro.Text = "OTROS";
+            this.rbotro.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rbMasculino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Location = new System.Drawing.Point(268, 48);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(124, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "MASCULINO";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.BackColor = System.Drawing.Color.Transparent;
+            this.rbMasculino.Location = new System.Drawing.Point(268, 48);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(124, 21);
+            this.rbMasculino.TabIndex = 1;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "MASCULINO";
+            this.rbMasculino.UseVisualStyleBackColor = false;
             // 
-            // radioButton3
+            // rbFemenino
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Location = new System.Drawing.Point(471, 48);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(82, 21);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "OTROS";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.rbFemenino.AutoSize = true;
+            this.rbFemenino.BackColor = System.Drawing.Color.Transparent;
+            this.rbFemenino.Location = new System.Drawing.Point(62, 48);
+            this.rbFemenino.Name = "rbFemenino";
+            this.rbFemenino.Size = new System.Drawing.Size(113, 21);
+            this.rbFemenino.TabIndex = 0;
+            this.rbFemenino.TabStop = true;
+            this.rbFemenino.Text = "FEMENINO";
+            this.rbFemenino.UseVisualStyleBackColor = false;
             // 
             // tbNombre
             // 
@@ -249,9 +249,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbotro;
+        private System.Windows.Forms.RadioButton rbMasculino;
+        private System.Windows.Forms.RadioButton rbFemenino;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbApellidos;
         private System.Windows.Forms.TextBox tbTelefono;

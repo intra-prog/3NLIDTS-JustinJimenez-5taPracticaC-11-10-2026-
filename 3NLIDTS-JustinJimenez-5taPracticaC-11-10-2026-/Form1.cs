@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -79,15 +80,9 @@ namespace _3NLIDTS_JustinJimenez_5taPracticaC_11_10_2026_
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private bool EsTextoValido(string Valor)
         {
@@ -112,5 +107,58 @@ namespace _3NLIDTS_JustinJimenez_5taPracticaC_11_10_2026_
             return long.TryParse(valor, out resultado) && valor.Length == 10;
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string nombres = tbNombre.Text;
+            string apellidos = tbApellidos.Text;
+            string tel = tbTelefono.Text;
+            string edad = tbEdad.Text;
+            string estatura = tbEstatura.Text;
+            string genero = "";
+
+            if (rbFemenino.Checked)
+            {
+                genero = "Femenino";
+            }
+            else if (rbMasculino.Checked)
+            {
+                genero = "Masculino";
+            }
+            else if (rbotro.Checked)
+            {
+                genero = "Otros";
+            }
+
+            string Mensaje = $"Nombre: {nombres}\nApellidos: {apellidos}\nTelefono: {tel}\n" +
+                             $"Edad: {edad}\nEstatura: {estatura}\nGenero: {genero}";
+
+            string rutaArchivo = "C:\\Users\\omnib\\OneDrive\\Documents\\3NAgoDic26.txt";
+
+            bool ArchivoExiste = File.Exists(rutaArchivo);
+
+            using (StreamWriter escritor = new StreamWriter(rutaArchivo, true))
+            {
+                if (ArchivoExiste)
+                {
+                    escritor.WriteLine();
+                }
+                escritor.WriteLine(Mensaje);
+            }
+
+            MessageBox.Show(Mensaje, "Confirmación de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            tbApellidos.Clear();
+            tbNombre.Clear();
+            tbEdad.Clear();
+            tbEstatura.Clear();
+            tbTelefono.Clear();
+            tbTelefono.BackColor = System.Drawing.Color.White;
+            rbFemenino.Checked = false;
+            rbMasculino.Checked = false;
+            rbotro.Checked = false;
+        }
     }
 }
